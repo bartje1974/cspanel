@@ -10,7 +10,7 @@ class DnsController extends Controller
     {
     	$dnsipv4 = dns_get_record($domain, DNS_A);
     	$dnsipv6 = dns_get_record($domain, DNS_AAAA);
-    	//return $dnsipv4[0]['host'].'<br>'.$dnsipv4[0]['ip'].'<br> ipv6: '.$dnsipv6[0]['ipv6'];
+    	return $dnsipv4[0]['host'].'<br>'.$dnsipv4[0]['ip'].'<br> ipv6: '.$dnsipv6[0]['ipv6'];
     	//dd($dnsipv4);
     }
 }
