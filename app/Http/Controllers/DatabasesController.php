@@ -14,7 +14,7 @@ class DatabasesController extends Controller
      */
     public function index()
     {
-        return view('database.index');
+        return view('databases.index');
     }
 
     /**
