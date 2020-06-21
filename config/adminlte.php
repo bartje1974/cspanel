@@ -259,7 +259,7 @@ return [
         ],
         [
             'text' => 'Databases',
-            'url' => '/database',
+            'url' => '/databases',
             'icon' => 'fas fa-fw fa-database',
         ],
         [

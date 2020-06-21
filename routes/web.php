@@ -24,5 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware(['auth']);
 Route::resource('website', 'WebsiteController')->middleware(['auth']);
 Route::resource('ftp', 'FtpController')->middleware(['auth']);
-Route::resource('database', 'DatabaseController')->middleware(['auth']);
+Route::resource('databases', 'DatabasesController')->middleware(['auth']);
 Route::resource('email', 'EmailController')->middleware(['auth']);

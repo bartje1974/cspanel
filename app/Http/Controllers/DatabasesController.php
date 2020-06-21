@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Database;
+use App\Databases;
 use Illuminate\Http\Request;
 
-class DatabaseController extends Controller
+class DatabasesController extends Controller
 {
     /**
      * Display a listing of the resource.
