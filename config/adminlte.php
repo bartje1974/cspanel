@@ -264,7 +264,7 @@ return [
         ],
         [
             'text' => 'Email',
-            'url' => 'email.index',
+            'url' => '/email',
             'icon' => 'fas fa-fw fa-envelope',
         ],
         [
