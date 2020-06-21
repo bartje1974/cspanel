@@ -249,17 +249,17 @@ return [
         ],
         [
             'text' => 'Website',
-            'url' => 'website.index',
+            'url'  => '/website',
             'icon' => 'fas fa-fw fa-globe',
         ],
         [
             'text' => 'Ftp',
-            'url' => 'ftp.index',
+            'url' => '/ftp',
             'icon' => 'fas fa-fw fa-upload',
         ],
         [
             'text' => 'Databases',
-            'url' => 'databases.index',
+            'url' => '/database',
             'icon' => 'fas fa-fw fa-database',
         ],
         [

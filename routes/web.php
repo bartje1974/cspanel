@@ -22,3 +22,6 @@ Route::get('/', function () {
 Route::get('dns/{domain}', 'DnsController@index');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware(['auth']);
+Route::resource('website', 'WebsiteController')->middleware(['auth']);
+Route::resource('ftp', 'FtpController')->middleware(['auth']);
+Route::resource('database', 'DatabaseController')->middleware(['auth']);

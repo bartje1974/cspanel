@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Ftp;
+use App\Database;
 use Illuminate\Http\Request;
 
-class FtpController extends Controller
+class DatabaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class FtpController extends Controller
      */
     public function index()
     {
-        return view('ftp.index');
+        return view('database.index');
     }
 
     /**
@@ -41,10 +41,10 @@ class FtpController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Ftp  $ftp
+     * @param  \App\Database  $database
      * @return \Illuminate\Http\Response
      */
-    public function show(Ftp $ftp)
+    public function show(Database $database)
     {
         //
     }
@@ -52,10 +52,10 @@ class FtpController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Ftp  $ftp
+     * @param  \App\Database  $database
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ftp $ftp)
+    public function edit(Database $database)
     {
         //
     }
@@ -64,10 +64,10 @@ class FtpController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Ftp  $ftp
+     * @param  \App\Database  $database
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ftp $ftp)
+    public function update(Request $request, Database $database)
     {
         //
     }
@@ -75,10 +75,10 @@ class FtpController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Ftp  $ftp
+     * @param  \App\Database  $database
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ftp $ftp)
+    public function destroy(Database $database)
     {
         //
     }
