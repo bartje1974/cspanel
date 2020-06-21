@@ -26,3 +26,4 @@ Route::resource('website', 'WebsiteController')->middleware(['auth']);
 Route::resource('ftp', 'FtpController')->middleware(['auth']);
 Route::resource('databases', 'DatabasesController')->middleware(['auth']);
 Route::resource('email', 'EmailController')->middleware(['auth']);
+Route::resource('profile', 'ProfileController')->middleware(['auth']);

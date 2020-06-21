@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	 $larinfo = Larinfo::getInfo();
+    	$larinfo = Larinfo::getInfo();
         $user = auth()->user();
 
         $domains = Domains::with(['user'])->where(['user_id' => $user->id])->count();
