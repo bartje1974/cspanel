@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Profile;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -14,7 +15,16 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile.index');
+        $user = auth()->user();
+
+        $profile = Profile::find($user->id);
+
+        if($profile == null)
+        {
+            $this->create();
+        }
+        
+        return view('profile.index', compact('profile'));
     }
 
     /**
@@ -24,7 +34,13 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        $user = auth()->user();
+        $profile = new Profile();
+        $profile->user_id = $user->id;
+
+        $profile->save();
+
+        return redirect('profile');
     }
 
     /**

@@ -42,7 +42,7 @@ class WebsiteController extends Controller
      */
     public function store(Request $request)
     {
-         request()->validate(['domain'=> ['required',] ]);
+        request()->validate(['domain'=> ['required',] ]);
 
 
         $auth_user = auth()->user();

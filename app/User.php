@@ -41,6 +41,11 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Domains');
     }
+
+    public function profile()
+    {
+        return $this->hasOne('App\Profile');
+    }
 }
 
 // user hasOn profile
