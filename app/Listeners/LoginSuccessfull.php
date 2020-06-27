@@ -32,12 +32,10 @@ class LoginSuccessfull
     {
         $event->subject = 'login';
         $event->description = 'Login Login successfull';
-        //dd($event);
+
         activity($event->subject)
             ->by($event->user)
             ->withProperties(['last_login' => date('d-m-Y H:m:i')])
             ->log($event->description);
-
-        //->log('Look, I logged something');
     }
 }

@@ -66,14 +66,3 @@ class User extends Authenticatable
         return $this->hasOne('App\Profile');
     }
 }
-
-// user hasOn profile
-// user hasMany domains
-
-//$user = User::find(1) select * from user where id = 1
-//$user->domains; select * from domains where user_id = $user->id
-//$user->domains->first()
-//$user->domains->last()
-//$user->domains->find()
-//$user->domains->split(3)
-//$user->domains->groupBy()
