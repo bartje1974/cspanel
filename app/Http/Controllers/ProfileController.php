@@ -16,15 +16,9 @@ class ProfileController extends Controller
     public function index()
     {
         $user = auth()->user();
-
         $profile = Profile::find($user->id);
 
-        if($profile == null)
-        {
-            $this->create();
-        }
-        
-        return view('profile.index', compact('profile'));
+        return view('profile.index', compact('profile'));    
     }
 
     /**
@@ -34,13 +28,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        $user = auth()->user();
-        $profile = new Profile();
-        $profile->user_id = $user->id;
-
-        $profile->save();
-
-        return redirect('profile');
+        //
     }
 
     /**
@@ -85,7 +73,28 @@ class ProfileController extends Controller
      */
     public function update(Request $request, Profile $profile)
     {
-        //
+        $request = request()->validate([
+                                        'profile_firstname' => 'required',
+                                        'profile_lastname' => 'required',
+                                        'profile_address' => 'required',
+                                        'profile_address_number' => 'required',
+                                        'profile_zipcode' => 'required',
+                                        'profile_place' => 'required',
+                                        'profile_country' => 'required',
+                                        'profile_phone' => 'required',
+                                        'profile_company_name' => '',
+                                        'avatar' => 'file|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                                    ]);
+
+
+        if(file_exists($_FILES['avatar']['tmp_name']))
+        {
+            $request['avatar'] = request('avatar')->store('avatars');
+        }
+
+        $update = Profile::find($profile->id)->update($request);
+
+        return redirect('profile')->with('success','Profile updated!');
     }
 
     /**
@@ -98,4 +107,5 @@ class ProfileController extends Controller
     {
         //
     }
+
 }

@@ -25,7 +25,7 @@ class CreateProfilesTable extends Migration
             $table->string('profile_place')->nullable();
             $table->string('profile_country')->nullable();
             $table->string('profile_phone')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->default('avatars/default-avatar.png');
             $table->timestamps();
         });
     }
