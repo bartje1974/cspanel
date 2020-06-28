@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+
 <!-- Default box -->
       <div class="card">
         <div class="card-header">
@@ -113,6 +114,9 @@
                 </p>
                 <p class="text-sm">Database server:
                   <b class="d-block">{{ $dbserver }} <smal>{{ $dbversion }}</smal></b>
+                </p>
+                <p class="text-sm">Server datetime zone:
+                  <b class="d-block">{{$cf}}</smal></b>
                 </p>
               </div>
 

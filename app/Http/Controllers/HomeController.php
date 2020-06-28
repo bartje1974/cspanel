@@ -10,6 +10,10 @@ class HomeController extends Controller
 {
     public function index()
     {
+        
+
+
+        $cf = config('app.timezone');;
     	$larinfo = Larinfo::getInfo();
         $user = auth()->user();
 
@@ -23,6 +27,6 @@ class HomeController extends Controller
         $serverwebserver = $larinfo['server']['software']['webserver'];
         $serverphp       =  $larinfo['server']['software']['php'];
 
-        return view('home', compact('dbserver', 'dbversion', 'serveruptime', 'servercpu', 'serversoftware', 'serverwebserver', 'serverphp', 'domains' ));
+        return view('home', compact('dbserver', 'dbversion', 'serveruptime', 'servercpu', 'serversoftware', 'serverwebserver', 'serverphp', 'domains', 'cf'));
     }
 }

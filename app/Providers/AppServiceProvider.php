@@ -29,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
         Config::set('app.url', setting('domain_url'));
         Config::set('mail.from.address', setting('email'));
         Config::set('mail.from.name', setting('from_email_name'));
+        Config::set('app.timezone', setting('date_time_zone'));
     }
 }
