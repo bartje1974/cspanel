@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
+use Spatie\Activitylog\Models\Activity;
 
 class ProfileController extends Controller
 {
@@ -16,9 +17,11 @@ class ProfileController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $profile = Profile::find($user->id);
+        $profile = Profile::where('user_id', $user->id)->first();
 
-        return view('profile.index', compact('profile'));    
+        $activity = Activity::where('causer_id', $user->id)->latest()->limit(50)->get();
+        
+        return view('profile.index', compact('profile', 'activity'));    
     }
 
     /**
