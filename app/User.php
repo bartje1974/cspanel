@@ -9,13 +9,11 @@ use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Permission\Traits\HasRoles;
 
 
-
-
 class User extends Authenticatable
 {
-    
+
     use Notifiable, LogsActivity, HasRoles;
-   
+
 
     protected $table = 'users';
 
@@ -29,7 +27,7 @@ class User extends Authenticatable
 
     protected static $logName = 'user';
 
-    public function getDescriptionForEvents(string $eventName) 
+    public function getDescriptionForEvents(string $eventName)
     {
         return "You have {$eventName} user";
     }

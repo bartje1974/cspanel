@@ -17,13 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-Route::get('dns/{domain}', 'DnsController@index');
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home')->middleware(['auth']);
-Route::resource('website', 'WebsiteController')->middleware(['auth']);
-Route::resource('ftp', 'FtpController')->middleware(['auth']);
-Route::resource('databases', 'DatabasesController')->middleware(['auth']);
-Route::resource('email', 'EmailController')->middleware(['auth']);
-Route::resource('profile', 'ProfileController')->middleware(['auth']);
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('website', 'WebsiteController');
+    Route::resource('ftp', 'FtpController');
+    Route::resource('databases', 'DatabasesController');
+    Route::resource('email', 'EmailController');
+    Route::resource('profile', 'ProfileController');
+
+
+    Route::resource('roles','RoleController');
+    Route::resource('users','UserController');
+
+});

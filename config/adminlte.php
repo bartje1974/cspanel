@@ -298,11 +298,13 @@ return [
 
         ],
         [
-        'text' => 'Manage',
-        'url' => '/roles',
-        //'can' => 'super-admin',
+            'text' => 'Users',
+            'url' => '/users',
         ],
-
+        [
+            'text' => 'Roles',
+            'url' => '/roles',
+        ],
 
     ],
 
