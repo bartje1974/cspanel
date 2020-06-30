@@ -47,19 +47,22 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // or may be done by chaining
         $role1 = Role::create(['name' => 'user'])
-            ->givePermissionTo(['create website', 'edit website', 'delete website', 
-            					'create ftp', 'edit ftp', 'delete ftp', 'create databases', 
+            ->givePermissionTo(['create website', 'edit website', 'delete website',
+            					'create ftp', 'edit ftp', 'delete ftp', 'create databases',
             					'delete databases', 'create email', 'edit email', 'delete email']);
 
         $role2 = Role::create(['name' => 'reseller'])
-            ->givePermissionTo(['create website', 'edit website', 'delete website', 
-            					'create ftp', 'edit ftp', 'delete ftp', 'create databases', 
-            					'delete databases', 'create email', 'edit email', 'delete email', 
+            ->givePermissionTo(['create website', 'edit website', 'delete website',
+            					'create ftp', 'edit ftp', 'delete ftp', 'create databases',
+            					'delete databases', 'create email', 'edit email', 'delete email',
             					'suspend email', 'suspend databases', 'suspend ftp', 'suspend website',
             					'suspend user', 'promote user', 'edit user'
             				]);
 
         $role3 = Role::create(['name' => 'super-admin']);
         $role3->givePermissionTo(Permission::all());
+
+
     }
+
 }

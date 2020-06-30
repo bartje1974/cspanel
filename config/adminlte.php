@@ -295,15 +295,15 @@ return [
 
         [
         'header' => 'ROLES & PERMISSIONS',
-        
+
         ],
         [
         'text' => 'Manage',
         'url' => '/roles',
-        'is' => 'Admin',
+        //'can' => 'super-admin',
         ],
 
-        
+
     ],
 
     /*
