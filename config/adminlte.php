@@ -281,8 +281,6 @@ return [
 
 
 
-
-
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -294,6 +292,17 @@ return [
             'url'  => 'password/reset',
             'icon' => 'fas fa-fw fa-lock',
         ],
+
+        [
+        'header' => 'ROLES & PERMISSIONS',
+        
+        ],
+        [
+        'text' => 'Manage',
+        'url' => '/roles',
+        'is' => 'Admin',
+        ],
+
         
     ],
 
