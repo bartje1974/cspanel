@@ -295,16 +295,29 @@ return [
 
         [
         'header' => 'ROLES & PERMISSIONS',
+        'can' => 'role-list',
+            'roles' => [
+                'Admin',
+            ],
 
         ],
         [
             'text' => 'Users',
             'url' => '/users',
+            'can' => 'role-list',
+            'roles' => [
+                'Admin',
+            ],
         ],
         [
             'text' => 'Roles',
             'url' => '/roles',
+            'can' => 'role-list',
+            'roles' => [
+                'Admin',
+            ],
         ],
+
 
     ],
 
@@ -324,11 +337,11 @@ return [
         JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\SubmenuFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter::class,
+        App\Filters\RoleMenuFilter::class
     ],
 
     /*
