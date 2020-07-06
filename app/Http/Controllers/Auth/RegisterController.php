@@ -72,6 +72,7 @@ class RegisterController extends Controller
                 ]);
 
         $user->profile()->save(new Profile);
+        $user->assignRole('User');
 
         return $user;
     }

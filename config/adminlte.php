@@ -269,12 +269,19 @@ return [
         ],
         [
             'text'    => 'Settings',
+            'roles' => [
+                'Admin',
+            ],
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
                     'text' => 'General setting',
                     'url'  => '/settings',
                     'icon' => 'fas fa-fw fa-cog',
+                    'can' => 'role-list',
+                    'roles' => [
+                        'Admin',
+                    ],
                 ],
             ],
         ],

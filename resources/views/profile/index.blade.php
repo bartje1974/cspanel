@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content_header')
-    <h1> Profile <small> Here is your profile</small></h1>
+    <h1> Profile:: <small> Here is your profile</small></h1>
 @stop
 
 @section('content')
@@ -17,6 +17,12 @@
         </div>
         <h3 class="profile-username text-center">{{$profile->profile_firstname}}</h3>
         <p class="text-muted text-center">{{$profile->profile_company_name}}</p>
+        @if(!empty($user->getRoleNames()))
+        <strong>Role:</strong>
+           @foreach($user->getRoleNames() as $v)
+                <label class="badge badge-success">{{ $v }}</label>
+           @endforeach
+            @endif
         <ul class="list-group list-group-unbordered mb-3">
           <li class="list-group-item">
             <b>Domains</b> <a class="float-right">1,322</a>
@@ -89,8 +95,8 @@
                           <input type="text" class="form-control" id="profile_address_number" name="profile_address_number" placeholder="number" value="{{$profile->profile_address_number}}" >
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="profile_place">City</label>
@@ -113,11 +119,11 @@
                       </div>
                       <div class="form-group col-md-6">
                         <label for="avatar">Choose avatar</label>
-                        <input type="file" class="form-control-file" id="avatar" name="avatar">  
+                        <input type="file" class="form-control-file" id="avatar" name="avatar">
                       </div>
                     </div>
-                      
-                    
+
+
                     <button type="submit" class="btn btn-primary">Update profile</button>
                     </form>
           </div>
@@ -128,7 +134,7 @@
                 <span class="bg-danger">{{$log->created_at->diffForHumans()}}</span>
               </div>
               <div>
-                @if($log->description =='Login Login successfull')   
+                @if($log->description =='Login Login successfull')
                         <i class="fas fa-user bg-primary"></i>
                 @elseif($log->description =='updated')
                         <i class="fas fa-spell-check bg-primary"></i>
@@ -153,16 +159,16 @@
                               {{$log->subject_type}} is updated.
                              @elseif($log->description =='created')
                               {{$log->subject_type}} is created.
-                            @endif   
+                            @endif
                           </div>
                           <div class="timeline-footer">
-                            
+
                           </div>
                         </div>
                       </div>
             </div>
             @endforeach
-          </div>       
+          </div>
         </div>
       </div>
     </div>

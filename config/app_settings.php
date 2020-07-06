@@ -529,7 +529,7 @@ return [
     'url' => 'settings',
 
     // Any middleware you want to run on above route
-    'middleware' => ['auth'],
+    'middleware' => ['auth', 'role:Admin'],
 
     // View settings
     'setting_page_view' => 'your_setting',

@@ -20,8 +20,8 @@ class ProfileController extends Controller
         $profile = Profile::where('user_id', $user->id)->first();
 
         $activity = Activity::where('causer_id', $user->id)->latest()->limit(50)->get();
-        
-        return view('profile.index', compact('profile', 'activity'));    
+
+        return view('profile.index', compact('profile', 'activity', 'user'));
     }
 
     /**
