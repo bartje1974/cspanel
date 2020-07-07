@@ -53,7 +53,13 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-        //
+        $profile = Profile::with(['user'])->where('user_id', $profile->user_id)->first();
+
+        //Domains::with(['user','website'])->where(['user_id' => $user->id])->get();
+
+        $activity = Activity::where('causer_id', $profile->user_id)->latest()->limit(50)->get();
+
+        return view('profile.show', compact('profile', 'activity'));
     }
 
     /**
